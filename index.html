@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>प्रियंका आणि कौस्तुभ - शुभविवाह निमंत्रण</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Rozha+One&family=Tiro+Devanagari+Marathi:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #fdf8f2;
+      --paper: #f6ede0;
+      --maroon: #7c1d26;
+      --gold: #c59b27;
+      --gold-light: #e6c875;
+      --text-dark: #3a2218;
+      --sage: #5c7457;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #1c1512;
+      font-family: 'Tiro Devanagari Marathi', serif;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Mobile Frame Wrapper */
+    .phone-frame {
+      width: 100%;
+      max-width: 430px;
+      background-color: var(--bg-cream);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+
+    /* ==================== 1. ENVELOPE OVERLAY ==================== */
+    #envelope-overlay {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px;
+      height: 100vh;
+      background: radial-gradient(circle at center, #f5e8d7 0%, #decbb3 100%);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s ease, visibility 1s ease;
+      padding: 20px;
+    }
+
+    .envelope-box {
+      width: 100%;
+      max-width: 350px;
+      height: 250px;
+      background: #f9f0e6;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 18px 40px rgba(60, 35, 20, 0.25), inset 0 0 30px rgba(197, 155, 39, 0.12);
+      perspective: 1000px;
+      border: 1px solid #e5d5c3;
+    }
+
+    /* Embossed floral background pattern */
+    .envelope-box::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(197, 155, 39, 0.4);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    /* Top Flap */
+    .flap-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(180deg, #fdf6ee 0%, #efe1d1 100%);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      transform-origin: top;
+      transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 5;
+      filter: drop-shadow(0 5px 8px rgba(0,0,0,0.12));
+    }
+
+    /* Side & Bottom Flaps */
+    .flap-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 155px;
+      background: linear-gradient(0deg, #f3e5d5 0%, #faefe3 100%);
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+      z-index: 3;
+      filter: drop-shadow(0 -3px 6px rgba(0,0,0,0.08));
+    }
+
+    /* Glowing Light Inside Envelope */
+    .inner-glow {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff8d6 0%, #f5b935 45%, transparent 75%);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 1.2s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Golden Vines SVG */
+    .vine-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    /* Wax Seal Button */
+    .wax-seal {
+      position: absolute;
+      top: 135px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 74px;
+      height: 74px;
+      background: radial-gradient(circle at 30% 30%, #a82431, #680f18 70%, #4a080e 100%);
+      border-radius: 50%;
+      z-index: 6;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.35), inset 0 2px 5px rgba(255,255,255,0.3), inset 0 -3px 6px rgba(0,0,0,0.5);
+      border: 3px solid #7d1520;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+    }
+
+    .wax-seal::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1.5px solid rgba(230, 200, 117, 0.6);
+      border-radius: 50%;
+    }
+
+    .wax-seal span {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .wax-seal:hover {
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .tap-instruction {
+      margin-top: 32px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #6e5544;
+      animation: pulse 2s infinite;
+    }
+
+    /* Envelope Opening Animation States */
+    .envelope-box.glowing .wax-seal {
+      box-shadow: 0 0 25px #ffae00, 0 0 50px #ff7b00;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .envelope-box.glowing .vine-svg {
+      opacity: 1;
+    }
+
+    .envelope-box.open .flap-top {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+
+    .envelope-box.open .wax-seal {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .envelope-box.open .inner-glow {
+      opacity: 1;
+      width: 340px;
+      height: 340px;
+      top: -60px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 1; }
+    }
+
+    /* ==================== 2. MAIN CONTENT ==================== */
+    #main-invitation {
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      padding-bottom: 50px;
+    }
+
+    #main-invitation.visible {
+      opacity: 1;
+    }
+
+    /* Floating Audio Button */
+    .audio-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 900;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5px);
+      border: 1px solid var(--gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+    }
+
+    /* Hero Section with Floral Arch */
+    .hero-section {
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      background: radial-gradient(circle at center, #fffdf9 0%, #f6ecdf 100%);
+    }
+
+    .floral-wreath {
+      width: 310px;
+      height: 440px;
+      border: 2px solid rgba(197, 155, 39, 0.45);
+      border-radius: 160px;
+      padding: 32px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 12px 35px rgba(124, 29, 38, 0.07);
+    }
+
+    .floral-wreath::before {
+      content: "🌿 🌸 🌿";
+      position: absolute;
+      top: -14px;
+      background: var(--bg-cream);
+      padding: 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .floral-wreath::after {
+      content: "🌿 🌺 🌿";
+      position: absolute;
+      bottom: -14px;
+      background: var(--bg-cream);
+      padding: 0 10px;
+      font-size: 1.1rem;
+    }
+
+    /* Animated Butterfly */
+    .butterfly {
+      position: absolute;
+      right: 12px;
+      top: 52%;
+      font-size: 1.6rem;
+      animation: flutter 3.5s ease-in-out infinite;
+    }
+
+    @keyframes flutter {
+      0%, 100% { transform: translate(0, 0) rotate(8deg) scale(1); }
+      50% { transform: translate(-8px, -14px) rotate(-8deg) scale(0.92); }
+    }
+
+    .ganesh-header {
+      font-size: 0.95rem;
+      color: var(--maroon);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .shubh-vivah-badge {
+      font-family: 'Rozha One', serif;
+      font-size: 1.9rem;
+      color: var(--maroon);
+      margin-bottom: 14px;
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 4px;
+    }
+
+    .couple-title {
+      font-family: 'Rozha One', serif;
+      font-size: 2.65rem;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin: 6px 0;
+    }
+
+    .and-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin: 4px 0;
+    }
+
+    .hero-date {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: #5c4338;
+      line-height: 1.6;
+    }
+
+    /* Section Styling */
+    .section-card {
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(197, 155, 39, 0.25);
+    }
+
+    .section-tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-family: 'Rozha One', serif;
+      font-size: 1.75rem;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+
+    /* Bride & Groom Parent Boxes (Exact PDF Wording) */
+    .parent-box {
+      background: #fff;
+      border: 1px solid #e7d8c5;
+      border-radius: 12px;
+      padding: 20px 16px;
+      margin: 16px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .role-badge {
+      display: inline-block;
+      background: var(--maroon);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .person-name {
+      font-family: 'Rozha One', serif;
+      font-size: 1.55rem;
+      color: var(--maroon);
+      margin-bottom: 6px;
+    }
+
+    .parent-details {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #4a3429;
+    }
+
+    .hashtag-pill {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 18px;
+      background: #f3e8d9;
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      color: var(--maroon);
+      font-weight: 500;
+    }
+
+    /* Illustrated Traditional Event Cards */
+    .event-card {
+      background: linear-gradient(180deg, #fffdf9 0%, #f9eedf 100%);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px 20px;
+      margin: 22px 0;
+      box-shadow: 0 10px 25px rgba(124, 29, 38, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-card::before {
+      content: "✨ 🌼 ✨";
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .event-title {
+      font-family: 'Rozha One', serif;
+      font-size: 1.65rem;
+      color: var(--maroon);
+      margin-bottom: 12px;
+    }
+
+    .tithi-text {
+      font-size: 0.95rem;
+      color: #5e4437;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .highlight-time {
+      background: var(--maroon);
+      color: #fff;
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      margin: 8px 0;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 22px;
+      border: 1.5px solid var(--maroon);
+      border-radius: 25px;
+      color: var(--maroon);
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--maroon);
+      color: #fff;
+    }
+
+    /* Countdown Section (Matching Video Maroon Banner) */
+    .countdown-banner {
+      background: linear-gradient(135deg, #7c1d26 0%, #520f16 100%);
+      color: #fff;
+      padding: 36px 20px;
+      text-align: center;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(230, 200, 117, 0.4);
+      border-radius: 10px;
+      padding: 12px 6px;
+    }
+
+    .time-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .time-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.85;
+    }
+
+    /* RSVP Section */
+    .rsvp-form {
+      background: #fff;
+      border: 1px solid #e5d6c5;
+      border-radius: 14px;
+      padding: 24px 18px;
+      text-align: left;
+      margin-top: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: #5c4338;
+      font-weight: 600;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #d4c3b0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      font-family: inherit;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      background: #4e6b48;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .footer-signoff {
+      background: #2b1810;
+      color: #f3e5d5;
+      text-align: center;
+      padding: 36px 20px;
+    }
+
+    .footer-signoff h3 {
+      font-family: 'Rozha One', serif;
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin: 10px 0 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-frame">
+
+    <!-- ==================== 1. INTERACTIVE 3D ENVELOPE ==================== -->
+    <div id="envelope-overlay">
+      <div class="envelope-box" id="envelopeBox" onclick="openInvitation()">
+        <div class="flap-top"></div>
+        <div class="inner-glow"></div>
+        <div class="flap-bottom"></div>
+
+        <!-- Glowing Golden Vines SVG -->
+        <svg class="vine-svg" viewBox="0 0 350 250" fill="none">
+          <path d="M175 135 C 120 160, 70 190, 30 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/>
+          <path d="M175 135 C 230 160, 280 190, 320 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/>
+          <path d="M175 135 C 110 100, 60 60, 25 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/>
+          <path d="M175 135 C 240 100, 290 60, 325 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/>
+          <circle cx="85" cy="180" r="5" fill="#ffd966"/>
+          <circle cx="265" cy="180" r="5" fill="#ffd966"/>
+          <circle cx="80" cy="70" r="5" fill="#ffd966"/>
+          <circle cx="270" cy="70" r="5" fill="#ffd966"/>
+        </svg>
+
+        <!-- Wax Seal with Initials -->
+        <div class="wax-seal">
+          <span>P & K</span>
+        </div>
+      </div>
+      <p class="tap-instruction">Tap the seal to open • सीलवर टॅप करा</p>
+    </div>
+
+    <!-- Background Flute Music (Optional MP3 URL) -->
+    <audio id="bgMusic" loop>
+      <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
+    <div class="audio-btn" onclick="toggleAudio()" title="संगीत चालू/बंद करा">🎵</div>
+
+    <!-- ==================== 2. MAIN SCROLLING INVITATION ==================== -->
+    <div id="main-invitation">
+
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div class="floral-wreath">
+          <div class="butterfly">🦋</div>
+          <div class="ganesh-header">।। श्री गणेशाय नमः ।।</div>
+          <div class="shubh-vivah-badge">॥ शुभविवाह ॥</div>
+
+          <p style="font-size: 0.85rem; color: #6e5544; margin-bottom: 6px;">सस्नेह निमंत्रण</p>
+          <div class="couple-title">प्रियंका</div>
+          <div class="and-symbol">&amp;</div>
+          <div class="couple-title">कौस्तुभ</div>
+
+          <div class="hero-date">
+            <strong>सोमवार, दि. ०४ जानेवारी २०२७</strong><br>
+            सकाळी १०.४२ मिनिटांनी<br>
+            वासवी सेलिब्रेशन हॉल, अहेरी
+          </div>
+        </div>
+      </section>
+
+      <!-- BRIDE & GROOM INTRODUCTION -->
+      <section class="section-card">
+        <div class="section-tag">THE INVITATION</div>
+        <h2 class="section-heading">वधू आणि वर परिचय</h2>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+          आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.
+        </p>
+
+        <!-- GROOM CARD (From PDF) -->
+        <div class="parent-box">
+          <span class="role-badge">...वर...</span>
+          <div class="person-name">चि. कौस्तुभ</div>
+          <div class="parent-details">
+            सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार<br>
+            यांचे चिरंजीव<br>
+            <strong>रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली</strong>
+          </div>
+        </div>
+
+        <!-- BRIDE CARD (From PDF) -->
+        <div class="parent-box">
+          <span class="role-badge">...वधु...</span>
+          <div class="person-name">चि. सौ. कां. प्रियंका</div>
+          <div class="parent-details">
+            सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार<br>
+            यांची कन्या<br>
+            <strong>रा. नांद���ांव, ता. मूल, जि. चंद्रपूर</strong>
+          </div>
+        </div>
+
+        <div class="hashtag-pill">#PriyankaWedsKaustubh</div>
+      </section>
+
+      <!-- MUHURTHAM & VENUE CARDS -->
+      <section class="section-card">
+        <div class="section-tag">CELEBRATION DETAILS</div>
+        <h2 class="section-heading">विवाह सोहळा तपशील</h2>
+
+        <!-- Vivah Muhurtha Card -->
+        <div class="event-card">
+          <div class="event-title">विवाह मुहूर्त</div>
+          <p class="tithi-text">
+            मिती शके १९४८, मार्गशीर्ष कृष्ण पक्ष द्वादशी<br>
+            अनुराधा नक्षत्र
+          </p>
+          <div class="highlight-time">
+            रोज सोमवार दि. ०४/०१/२०२७ ला<br>
+            सकाळी १०.४२ मिनिटांनी
+          </div>
+        </div>
+
+        <!-- Venue & Bhoj Card -->
+        <div class="event-card">
+          <div class="event-title">विवाह स्थळ</div>
+          <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">
+            वासवी सेलिब्रेशन हॉल
+          </p>
+          <p class="tithi-text">आलापल्ली रोड, अहेरी</p>
+
+          <hr style="border: none; border-top: 1px dashed var(--gold); margin: 16px 0;">
+
+          <div class="event-title" style="font-size: 1.35rem; margin-bottom: 6px;">स्वरूची भोज</div>
+          <p class="tithi-text" style="margin-bottom: 8px;">विवाह सोहळ्या नंतर लगेच</p>
+
+          <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Vasavi+Celebration+Hall+Alapalli+Road+Aheri" target="_blank">
+            📍 Google Maps वर मार्ग पहा
+          </a>
+        </div>
+      </section>
+
+      <!-- COUNTDOWN TIMER -->
+      <section class="countdown-banner">
+        <div class="section-tag" style="color: var(--gold-light);">COUNTING DOWN TO THE MUHURTHAM</div>
+        <div style="font-size: 1.2rem;">शुभ मुहूर्ताची घटिका</div>
+        <div class="countdown-grid">
+          <div class="time-box">
+            <div class="time-num" id="days">00</div>
+            <div class="time-label">Days</div>
+          </div>
+          <div class="time-box">
+            <div class="time-num" id="hours">00</div>
+            <div class="time-label">Hours</div>
+          </div>
+          <div class="time-box">
+            <div class="time-num" id="mins">00</div>
+            <div class="time-label">Mins</div>
+          </div>
+          <div class="time-box">
+            <div class="time-num" id="secs">00</div>
+            <div class="time-label">Secs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHATSAPP RSVP SECTION -->
+      <section class="section-card">
+        <div class="section-tag">RSVP</div>
+        <h2 class="section-heading">आपली उपस्थिती कळवा</h2>
+        <p style="font-size: 0.9rem; color: #5c4338;">
+          खालील माहिती भरून थेट कुटुंबाला WhatsApp द्वारे संदेश पाठवा.
+        </p>
+
+        <div class="rsvp-form">
+          <label class="form-label">आपले नाव (Your Name)</label>
+          <input type="text" id="guestName" class="form-input" placeholder="उदा. राहुल देशमुख">
+
+          <label class="form-label">एकूण किती व्यक्ती येणार? (Number of Guests)</label>
+          <input type="number" id="guestCount" class="form-input" value="2" min="1" max="20">
+
+          <button class="whatsapp-btn" onclick="sendWhatsAppRSVP()">
+            💬 SEND RSVP ON WHATSAPP
+          </button>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer-signoff">
+        <p style="font-size: 0.9rem; opacity: 0.85;">आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,</p>
+        <h3>गुंडावार आणि गादेवार परिवार</h3>
+        <p style="font-size: 0.85rem; color: var(--gold-light); margin-top: 4px;">
+          स्वागतोत्सुक: समीर प्रकाश गुंडावार
+        </p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    // 1. Envelope Opening Sequence
+    function openInvitation() {
+      const box = document.getElementById('envelopeBox');
+      const overlay = document.getElementById('envelope-overlay');
+      const main = document.getElementById('main-invitation');
+      const audio = document.getElementById('bgMusic');
+
+      // Step 1: Glow seal & golden vines
+      box.classList.add('glowing');
+
+      // Play flute audio on user interaction
+      audio.play().catch(() => {});
+
+      // Step 2: Open flap & release inner light
+      setTimeout(() => {
+        box.classList.add('open');
+      }, 650);
+
+      // Step 3: Fade out envelope & show main invitation
+      setTimeout(() => {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+        main.classList.add('visible');
+        window.scrollTo(0, 0);
+      }, 1850);
+    }
+
+    // 2. Audio Toggle
+    function toggleAudio() {
+      const audio = document.getElementById('bgMusic');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    // 3. Countdown Timer to Jan 4, 2027 at 10:42 AM IST
+    const targetDate = new Date("2027-01-04T10:42:00+05:30").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) return;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = d;
+      document.getElementById('hours').innerText = String(h).padStart(2, '0');
+      document.getElementById('mins').innerText = String(m).padStart(2, '0');
+      document.getElementById('secs').innerText = String(s).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 4. WhatsApp RSVP Sender
+    function sendWhatsAppRSVP() {
+      const name = document.getElementById('guestName').value.trim() || 'निमंत्रित पाहुणे';
+      const count = document.getElementById('guestCount').value || '1';
+      // Replace with your 10-digit WhatsApp number (with 91 prefix)
+      const phone = "919000000000"; 
+      const message = `नमस्कार! मी *${name}*, प्रियंका आणि कौस्तुभ यांच्या शुभविवाह सोहळ्यासाठी (०४ जानेवारी २०२७) एकूण *${count}* व्यक्तींसह आनंदाने उपस्थित राहणार आहे. धन्यवाद!`;
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
