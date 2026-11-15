@@ -20,213 +20,55 @@
     .inner-glow{position:absolute;top:25%;left:50%;transform:translateX(-50%);width:20px;height:20px;background:radial-gradient(circle,#fff8d6 0%,#f5b935 45%,transparent 75%);border-radius:50%;opacity:0;transition:all 1.2s ease;z-index:2;pointer-events:none}
     .vine-svg{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;opacity:0;transition:opacity .6s ease}
     .wax-seal{position:absolute;top:135px;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;background:radial-gradient(circle at 30% 30%,#a82431,#680f18 70%,#4a080e 100%);border-radius:50%;z-index:6;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,.35),inset 0 2px 5px rgba(255,255,255,.3),inset 0 -3px 6px rgba(0,0,0,.5);border:3px solid #7d1520;transition:transform .4s ease,box-shadow .4s ease,opacity .6s ease}
-    .wax-seal:after{content:"";position:absolute;inset:6px;border:1.5px solid rgba(230,200,117,.6);border-radius:50%}
-    .wax-seal span{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:1.25rem;font-weight:700;letter-spacing:1px;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+    .wax-seal:after{content:"";position:absolute;inset:6px;border:1.5px solid rgba(230,200,117,.6);border-radius:50%}.wax-seal span{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:1.25rem;font-weight:700;letter-spacing:1px;text-shadow:0 1px 2px rgba(0,0,0,.6)}
     .tap-instruction{margin-top:32px;font-family:'Poppins','Noto Serif Devanagari',sans-serif;font-size:.78rem;letter-spacing:1px;color:#6e5544;animation:pulse 2s infinite;text-align:center}
-    .envelope-box.glowing .wax-seal{box-shadow:0 0 25px #ffae00,0 0 50px #ff7b00;transform:translate(-50%,-50%) scale(1.1)}
-    .envelope-box.glowing .vine-svg{opacity:1}.envelope-box.open .flap-top{transform:rotateX(180deg);z-index:1}.envelope-box.open .wax-seal{opacity:0;pointer-events:none}
-    .envelope-box.open .inner-glow{opacity:1;width:340px;height:340px;top:-60px}
+    .envelope-box.glowing .wax-seal{box-shadow:0 0 25px #ffae00,0 0 50px #ff7b00;transform:translate(-50%,-50%) scale(1.1)}.envelope-box.glowing .vine-svg{opacity:1}.envelope-box.open .flap-top{transform:rotateX(180deg);z-index:1}.envelope-box.open .wax-seal{opacity:0;pointer-events:none}.envelope-box.open .inner-glow{opacity:1;width:340px;height:340px;top:-60px}
     @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-    #main-invitation{opacity:0;transition:opacity 1.2s ease;padding-bottom:0}#main-invitation.visible{opacity:1}
-    .floating-controls{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(100%,430px);z-index:1100;pointer-events:none}
-    .audio-btn,.language-btn{position:absolute;top:0;height:42px;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);pointer-events:auto}
-    .audio-btn{right:16px;width:42px;background:rgba(255,255,255,.92);backdrop-filter:blur(5px);border:1.5px solid var(--gold);font-size:1.1rem}
-    .language-btn{left:16px;background:rgba(255,255,255,.95);border:1.5px solid var(--gold);padding:0 15px;color:var(--maroon);font:600 .85rem 'Poppins','Noto Serif Devanagari',sans-serif}
-    .hero-section{min-height:95vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;background:radial-gradient(circle at center,#fffdf9 0%,#f6ecdf 100%)}
-    .floral-wreath{width:min(310px,100%);min-height:440px;border:2px solid rgba(197,155,39,.45);border-radius:160px;padding:32px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:rgba(255,255,255,.65);box-shadow:0 12px 35px rgba(124,29,38,.07)}
-    .floral-wreath:before{content:"🌿 🌸 🌿";position:absolute;top:-14px;background:var(--bg-cream);padding:0 10px;font-size:1.1rem}.floral-wreath:after{content:"🌿 🌺 🌿";position:absolute;bottom:-14px;background:var(--bg-cream);padding:0 10px;font-size:1.1rem}
-    .butterfly{position:absolute;right:12px;top:52%;font-size:1.6rem;animation:flutter 3.5s ease-in-out infinite}@keyframes flutter{0%,100%{transform:translate(0,0) rotate(8deg) scale(1)}50%{transform:translate(-8px,-14px) rotate(-8deg) scale(.92)}}
-    .ganesh-header{font-size:.95rem;color:var(--maroon);letter-spacing:.5px;margin-bottom:6px;font-weight:600}.shubh-vivah-badge{font-family:'Rozha One',serif;font-size:1.9rem;color:var(--maroon);margin-bottom:14px;border-bottom:1.5px solid var(--gold);padding-bottom:4px}
-    .couple-title{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:2.65rem;color:var(--text-dark);line-height:1.15;margin:6px 0}.and-symbol{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold);margin:4px 0}.hero-date{margin-top:18px;font-size:.95rem;color:#5c4338;line-height:1.7}
-    .section-card{padding:40px 24px;text-align:center;border-top:1px solid rgba(197,155,39,.25)}.section-tag{font-family:'Poppins',sans-serif;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin-bottom:10px}.section-heading{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.75rem;color:var(--text-dark);margin-bottom:18px}
-    .parent-box{background:#fff;border:1px solid #e7d8c5;border-radius:12px;padding:22px 16px;margin:16px 0;box-shadow:0 6px 18px rgba(0,0,0,.03);position:relative}.role-badge{display:inline-block;background:var(--maroon);color:#fff;font-size:.85rem;padding:4px 16px;border-radius:20px;margin-bottom:12px;letter-spacing:.5px}.person-name{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.65rem;color:var(--maroon);margin-bottom:8px}.parent-details{font-family:'Noto Serif Devanagari',serif;font-size:1.02rem;line-height:1.75;color:#4a3429}.village-line{display:block;margin-top:6px;font-weight:700;font-size:1.02rem;color:#3a2218}
-    .hashtag-pill{display:inline-block;margin-top:14px;padding:6px 18px;background:#f3e8d9;border:1px solid var(--gold);border-radius:20px;font-family:'Poppins',sans-serif;font-size:.78rem;letter-spacing:1px;color:var(--maroon);font-weight:500}
-    .event-card{background:linear-gradient(180deg,#fffdf9 0%,#f9eedf 100%);border:2px solid var(--gold);border-radius:16px;padding:28px 20px;margin:22px 0;box-shadow:0 10px 25px rgba(124,29,38,.08);position:relative;overflow:hidden}.event-card:before{content:"✨ 🌼 ✨";display:block;font-size:1.2rem;margin-bottom:10px}.event-title{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.65rem;color:var(--maroon);margin-bottom:12px}.tithi-text{font-size:.98rem;color:#5e4437;line-height:1.7;margin-bottom:12px}.highlight-time{background:var(--maroon);color:#fff;display:inline-block;padding:8px 18px;border-radius:8px;font-size:1.02rem;line-height:1.7;margin:8px 0}.venue-name{font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:4px}.btn-outline{display:inline-block;margin-top:14px;padding:10px 22px;border:1.5px solid var(--maroon);border-radius:25px;color:var(--maroon);text-decoration:none;font-family:'Poppins','Noto Serif Devanagari',sans-serif;font-size:.82rem;font-weight:500;transition:all .3s}.btn-outline:hover{background:var(--maroon);color:#fff}
-    .countdown-banner{background:linear-gradient(135deg,#7c1d26 0%,#520f16 100%);color:#fff;padding:36px 20px;text-align:center}.countdown-banner .section-tag{color:var(--gold-light)}.countdown-title{font-size:1.2rem}.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.time-box{background:rgba(255,255,255,.12);border:1px solid rgba(230,200,117,.4);border-radius:10px;padding:12px 6px}.time-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--gold-light)}.time-label{font-family:'Poppins',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;opacity:.85}
-    .footer-signoff{background:#2b1810;color:#f3e5d5;text-align:center;padding:40px 20px}.footer-signoff p{font-size:.95rem;opacity:.9}.footer-signoff h3{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.95rem;color:var(--gold-light);margin:10px 0 0;font-weight:600}
-    @media(max-width:350px){.floral-wreath{min-height:420px;padding:28px 14px}.couple-title{font-size:2.35rem}.section-card{padding-left:18px;padding-right:18px}.countdown-grid{gap:6px}.time-num{font-size:1.6rem}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+    #main-invitation{opacity:0;transition:opacity 1.2s ease}#main-invitation.visible{opacity:1}
+    .floating-controls{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(100%,430px);z-index:1100;pointer-events:none}.audio-btn,.language-btn{position:absolute;top:0;height:42px;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);pointer-events:auto}.audio-btn{right:16px;width:42px;background:rgba(255,255,255,.92);backdrop-filter:blur(5px);border:1.5px solid var(--gold);font-size:1.1rem}.language-btn{left:16px;background:rgba(255,255,255,.95);border:1.5px solid var(--gold);padding:0 15px;color:var(--maroon);font:600 .85rem 'Poppins','Noto Serif Devanagari',sans-serif}
+    .hero-section{min-height:95vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 24px;background:radial-gradient(circle at center,#fffdf9 0%,#f6ecdf 100%)}.floral-wreath{width:min(310px,100%);min-height:440px;border:2px solid rgba(197,155,39,.45);border-radius:160px;padding:32px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:rgba(255,255,255,.65);box-shadow:0 12px 35px rgba(124,29,38,.07)}.floral-wreath:before{content:"🌿 🌸 🌿";position:absolute;top:-14px;background:var(--bg-cream);padding:0 10px;font-size:1.1rem}.floral-wreath:after{content:"🌿 🌺 🌿";position:absolute;bottom:-14px;background:var(--bg-cream);padding:0 10px;font-size:1.1rem}.butterfly{position:absolute;right:12px;top:52%;font-size:1.6rem;animation:flutter 3.5s ease-in-out infinite}@keyframes flutter{0%,100%{transform:translate(0,0) rotate(8deg) scale(1)}50%{transform:translate(-8px,-14px) rotate(-8deg) scale(.92)}}
+    .ganesh-header{font-size:.95rem;color:var(--maroon);letter-spacing:.5px;margin-bottom:6px;font-weight:600}.shubh-vivah-badge{font-family:'Rozha One',serif;font-size:1.9rem;color:var(--maroon);margin-bottom:14px;border-bottom:1.5px solid var(--gold);padding-bottom:4px}.couple-title{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:2.65rem;color:var(--text-dark);line-height:1.15;margin:6px 0}.and-symbol{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold);margin:4px 0}.hero-date{margin-top:18px;font-size:.95rem;color:#5c4338;line-height:1.7}
+    .section-card{padding:40px 24px;text-align:center;border-top:1px solid rgba(197,155,39,.25)}.section-tag{font-family:'Poppins',sans-serif;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin-bottom:10px}.section-heading{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.75rem;color:var(--text-dark);margin-bottom:18px}.parent-box{background:#fff;border:1px solid #e7d8c5;border-radius:12px;padding:22px 16px;margin:16px 0;box-shadow:0 6px 18px rgba(0,0,0,.03)}.role-badge{display:inline-block;background:var(--maroon);color:#fff;font-size:.85rem;padding:4px 16px;border-radius:20px;margin-bottom:12px}.person-name{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.65rem;color:var(--maroon);margin-bottom:8px}.parent-details{font-family:'Noto Serif Devanagari',serif;font-size:1.02rem;line-height:1.75;color:#4a3429}.village-line{display:block;margin-top:6px;font-weight:700;font-size:1.02rem;color:#3a2218}.hashtag-pill{display:inline-block;margin-top:14px;padding:6px 18px;background:#f3e8d9;border:1px solid var(--gold);border-radius:20px;font-family:'Poppins',sans-serif;font-size:.78rem;letter-spacing:1px;color:var(--maroon)}
+    .event-card{background:linear-gradient(180deg,#fffdf9 0%,#f9eedf 100%);border:2px solid var(--gold);border-radius:16px;padding:28px 20px;margin:22px 0;box-shadow:0 10px 25px rgba(124,29,38,.08);overflow:hidden}.event-card:before{content:"✨ 🌼 ✨";display:block;font-size:1.2rem;margin-bottom:10px}.event-title{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.65rem;color:var(--maroon);margin-bottom:12px}.tithi-text{font-size:.98rem;color:#5e4437;line-height:1.7;margin-bottom:12px}.highlight-time{background:var(--maroon);color:#fff;display:inline-block;padding:8px 18px;border-radius:8px;font-size:1.02rem;line-height:1.7;margin:8px 0}.venue-name{font-size:1.15rem;font-weight:700;margin-bottom:4px}.btn-outline{display:inline-block;margin-top:14px;padding:10px 22px;border:1.5px solid var(--maroon);border-radius:25px;color:var(--maroon);text-decoration:none;font-family:'Poppins','Noto Serif Devanagari',sans-serif;font-size:.82rem}.btn-outline:hover{background:var(--maroon);color:#fff}
+    .countdown-banner{background:linear-gradient(135deg,#7c1d26 0%,#520f16 100%);color:#fff;padding:36px 20px;text-align:center}.countdown-banner .section-tag{color:var(--gold-light)}.countdown-title{font-size:1.2rem}.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.time-box{background:rgba(255,255,255,.12);border:1px solid rgba(230,200,117,.4);border-radius:10px;padding:12px 6px}.time-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--gold-light)}.time-label{font-family:'Poppins',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:1px}.footer-signoff{background:#2b1810;color:#f3e5d5;text-align:center;padding:40px 20px}.footer-signoff p{font-size:.95rem;opacity:.9}.footer-signoff h3{font-family:'Rozha One','Noto Serif Devanagari',serif;font-size:1.95rem;color:var(--gold-light);margin:10px 0 0}
+    @media(max-width:350px){.floral-wreath{min-height:420px;padding:28px 14px}.couple-title{font-size:2.35rem}.section-card{padding-left:18px;padding-right:18px}.countdown-grid{gap:6px}.time-num{font-size:1.6rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <div class="phone-frame">
-    <div id="envelope-overlay">
-      <div class="envelope-box" id="envelopeBox" onclick="openInvitation()" role="button" tabindex="0" aria-label="Open the wedding invitation">
-        <div class="flap-top"></div><div class="inner-glow"></div><div class="flap-bottom"></div>
-        <svg class="vine-svg" viewBox="0 0 350 250" fill="none" aria-hidden="true">
-          <path d="M175 135 C 120 160, 70 190, 30 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 230 160, 280 190, 320 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 110 100, 60 60, 25 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 240 100, 290 60, 325 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><circle cx="85" cy="180" r="5" fill="#ffd966"/><circle cx="265" cy="180" r="5" fill="#ffd966"/><circle cx="80" cy="70" r="5" fill="#ffd966"/><circle cx="270" cy="70" r="5" fill="#ffd966"/>
-        </svg>
-        <div class="wax-seal"><span>K &amp; P</span></div>
-      </div>
-      <p class="tap-instruction" data-i18n="tap">Tap the seal to open • सीलवर टॅप करा</p>
-    </div>
-
-    <div class="floating-controls" aria-label="Page controls">
-      <button class="language-btn" id="languageToggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English">English</button>
-      <button class="audio-btn" id="audioBtn" type="button" onclick="toggleAudio()" title="संगीत चालू/बंद करा" aria-label="Toggle music">🎵</button>
-    </div>
-
+    <div id="envelope-overlay"><div class="envelope-box" id="envelopeBox" onclick="openInvitation()" role="button" tabindex="0" aria-label="Open the wedding invitation"><div class="flap-top"></div><div class="inner-glow"></div><div class="flap-bottom"></div>
+      <svg class="vine-svg" viewBox="0 0 350 250" fill="none" aria-hidden="true"><path d="M175 135 C 120 160, 70 190, 30 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 230 160, 280 190, 320 220" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 110 100, 60 60, 25 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><path d="M175 135 C 240 100, 290 60, 325 30" stroke="#f5b935" stroke-width="2" stroke-dasharray="4 2"/><circle cx="85" cy="180" r="5" fill="#ffd966"/><circle cx="265" cy="180" r="5" fill="#ffd966"/><circle cx="80" cy="70" r="5" fill="#ffd966"/><circle cx="270" cy="70" r="5" fill="#ffd966"/></svg>
+      <div class="wax-seal"><span>K &amp; P</span></div></div><p class="tap-instruction" data-i18n="tap">Tap the seal to open • सीलवर टॅप करा</p></div>
+    <div class="floating-controls" aria-label="Page controls"><button class="language-btn" id="languageToggle" type="button" onclick="toggleLanguage()">English</button><button class="audio-btn" id="audioBtn" type="button" onclick="toggleAudio()" title="संगीत चालू/बंद करा" aria-label="Toggle music">🎵</button></div>
     <div id="yt-audio-Wrapper" style="position:fixed;width:1px;height:1px;bottom:-10px;left:-10px;opacity:.01;pointer-events:none;z-index:-1"><div id="ytplayer"></div></div>
-
     <main id="main-invitation">
-      <section class="hero-section">
-        <div class="floral-wreath">
-          <div class="butterfly" aria-hidden="true">🦋</div>
-          <div class="ganesh-header" data-i18n="ganesh">।। श्री गणेशाय नमः ।।</div>
-          <div class="shubh-vivah-badge" data-i18n="wedding">॥ शुभविवाह ॥</div>
-          <p data-i18n="warmInvitation" style="font-size:.85rem;color:#6e5544;margin-bottom:6px">सस्नेह निमंत्रण</p>
-          <div class="couple-title">कौस्तुभ</div><div class="and-symbol">&amp;</div><div class="couple-title">प्रियंका</div>
-          <div class="hero-date"><strong data-i18n="date">सोमवार, दि. ०४ जानेवारी २०२७</strong><br><span data-i18n="time">सकाळी १०.४२ मिनिटांनी</span><br><span data-i18n="venueShort">वासवी सेलिब्रेशन हॉल, अहेरी</span></div>
-        </div>
+      <section class="hero-section"><div class="floral-wreath"><div class="butterfly" aria-hidden="true">🦋</div><div class="ganesh-header" data-i18n="ganesh">।। श्री गणेशाय नमः ।।</div><div class="shubh-vivah-badge" data-i18n="wedding">॥ शुभविवाह ॥</div><p data-i18n="warmInvitation" style="font-size:.85rem;color:#6e5544;margin-bottom:6px">सस्नेह निमंत्रण</p><div class="couple-title" data-i18n="groomName">कौस्तुभ</div><div class="and-symbol">&amp;</div><div class="couple-title" data-i18n="brideName">प्रियंका</div><div class="hero-date"><strong data-i18n="date">सोमवार, दि. ०४ जानेवारी २०२७</strong><br><span data-i18n="time">सकाळी १०.४२ मिनिटांनी</span><br><span data-i18n="venueShort">वासवी सेलिब्रेशन हॉल, अहेरी</span></div></div></section>
+      <section class="section-card"><div class="section-tag" data-i18n="invitationTag">THE INVITATION</div><h2 class="section-heading" data-i18n="coupleIntro">वर आणि वधू परिचय</h2><p data-i18n="invitationMessage" style="font-size:.95rem;line-height:1.8;margin-bottom:20px">आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.</p>
+        <div class="parent-box"><span class="role-badge" data-i18n="groomRole">...वर...</span><div class="person-name" data-i18n="groomNameCard">चि. कौस्तुभ</div><div class="parent-details"><span data-i18n="groomParents">सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार</span><br><span data-i18n="sonOf">यांचे चिरंजीव</span><span class="village-line" data-i18n="groomAddress">रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली</span></div></div>
+        <div class="parent-box"><span class="role-badge" data-i18n="brideRole">...वधु...</span><div class="person-name" data-i18n="brideNameCard">चि. सौ. कां. प्रियंका</div><div class="parent-details"><span data-i18n="brideParents">सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार</span><br><span data-i18n="daughterOf">यांची कन्या</span><span class="village-line" data-i18n="brideAddress">रा. नांदगांव, ता. मूल, जि. चंद्रपूर</span></div></div><div class="hashtag-pill">#KaustubhWedsPriyanka</div>
       </section>
-
-      <section class="section-card">
-        <div class="section-tag" data-i18n="invitationTag">THE INVITATION</div>
-        <h2 class="section-heading" data-i18n="coupleIntro">वर आणि वधू परिचय</h2>
-        <p data-i18n="invitationMessage" style="font-size:.95rem;line-height:1.8;margin-bottom:20px">आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.</p>
-        <div class="parent-box">
-          <span class="role-badge" data-i18n="groomRole">...वर...</span>
-          <div class="person-name">चि. कौस्तुभ</div>
-          <div class="parent-details"><span data-i18n="groomParents">सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार</span><br><span data-i18n="sonOf">यांचे चिरंजीव</span><span class="village-line" data-i18n="groomAddress">रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली</span></div>
-        </div>
-        <div class="parent-box">
-          <span class="role-badge" data-i18n="brideRole">...वधु...</span>
-          <div class="person-name">चि. सौ. कां. प्रियंका</div>
-          <div class="parent-details"><span data-i18n="brideParents">सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार</span><br><span data-i18n="daughterOf">यांची कन्या</span><span class="village-line" data-i18n="brideAddress">रा. नांदगांव, ता. मूल, जि. चंद्रपूर</span></div>
-        </div>
-        <div class="hashtag-pill">#KaustubhWedsPriyanka</div>
+      <section class="section-card"><div class="section-tag" data-i18n="celebrationTag">CELEBRATION DETAILS</div><h2 class="section-heading" data-i18n="eventDetails">विवाह सोहळा तपशील</h2>
+        <div class="event-card"><div class="event-title" data-i18n="muhurta">विवाह मुहूर्त</div><p class="tithi-text"><span data-i18n="lunarDate">मिती शके १९४८, मार्गशीर्ष कृष्ण पक्��� द्वादशी</span><br><span data-i18n="nakshatra">अनुराधा नक्षत्र</span></p><div class="highlight-time"><span data-i18n="eventDate">रोज सोमवार दि. ०४/०१/२०२७ ला</span><br><span data-i18n="eventTime">सकाळी १०.४२ मिनिटांनी</span></div></div>
+        <div class="event-card"><div class="event-title" data-i18n="venueTitle">विवाह स्थळ</div><p class="venue-name" data-i18n="venueName">वासवी सेलिब्रेशन हॉल</p><p class="tithi-text" data-i18n="venueAddress">आलापल्ली रोड, अहेरी</p><hr style="border:none;border-top:1px dashed var(--gold);margin:16px 0"><div class="event-title" style="font-size:1.35rem;margin-bottom:6px" data-i18n="meal">स्वरूची भोज</div><p class="tithi-text" style="margin-bottom:8px" data-i18n="mealTime">विवाह सोहळ्या नंतर लगेच</p><a class="btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Vasavi+Celebration+Hall+Alapalli+Road+Aheri" target="_blank" rel="noopener noreferrer" data-i18n="directions">📍 Google Maps वर मार्ग पहा</a></div>
       </section>
-
-      <section class="section-card">
-        <div class="section-tag" data-i18n="celebrationTag">CELEBRATION DETAILS</div>
-        <h2 class="section-heading" data-i18n="eventDetails">विवाह सोहळा तपशील</h2>
-        <div class="event-card">
-          <div class="event-title" data-i18n="muhurta">विवाह मुहूर्त</div>
-          <p class="tithi-text"><span data-i18n="lunarDate">मिती शके १९४८, मार्गशीर्ष कृष्ण पक्ष द्वादशी</span><br><span data-i18n="nakshatra">अनुराधा नक्षत्र</span></p>
-          <div class="highlight-time"><span data-i18n="eventDate">रोज सोमवार दि. ०४/०१/२०२७ ला</span><br><span data-i18n="eventTime">सकाळी १०.४२ मिनिटांनी</span></div>
-        </div>
-        <div class="event-card">
-          <div class="event-title" data-i18n="venueTitle">विवाह स्थळ</div>
-          <p class="venue-name" data-i18n="venueName">वासवी सेलिब्रेशन हॉल</p>
-          <p class="tithi-text" data-i18n="venueAddress">आलापल्ली रोड, अहेरी</p>
-          <hr style="border:none;border-top:1px dashed var(--gold);margin:16px 0">
-          <div class="event-title" style="font-size:1.35rem;margin-bottom:6px" data-i18n="meal">स्वरूची भोज</div>
-          <p class="tithi-text" style="margin-bottom:8px" data-i18n="mealTime">विवाह सोहळ्या नंतर लगेच</p>
-          <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Vasavi+Celebration+Hall+Alapalli+Road+Aheri" target="_blank" rel="noopener noreferrer" data-i18n="directions">📍 Google Maps वर मार्ग पहा</a>
-        </div>
-      </section>
-
-      <section class="countdown-banner">
-        <div class="section-tag" data-i18n="countdownTag">COUNTING DOWN TO THE MUHURTHAM</div>
-        <div class="countdown-title" data-i18n="countdownTitle">शुभ मुहूर्ताची घटिका</div>
-        <div class="countdown-grid">
-          <div class="time-box"><div class="time-num" id="days">00</div><div class="time-label" data-i18n="days">Days</div></div>
-          <div class="time-box"><div class="time-num" id="hours">00</div><div class="time-label" data-i18n="hours">Hours</div></div>
-          <div class="time-box"><div class="time-num" id="mins">00</div><div class="time-label" data-i18n="minutes">Mins</div></div>
-          <div class="time-box"><div class="time-num" id="secs">00</div><div class="time-label" data-i18n="seconds">Secs</div></div>
-        </div>
-      </section>
-
-      <footer class="footer-signoff">
-        <p data-i18n="blessings">आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,</p>
-        <h3 data-i18n="family">गादेवार परिवार</h3>
-      </footer>
+      <section class="countdown-banner"><div class="section-tag" data-i18n="countdownTag">COUNTING DOWN TO THE MUHURTHAM</div><div class="countdown-title" data-i18n="countdownTitle">शुभ मुहूर्ताची घटिका</div><div class="countdown-grid"><div class="time-box"><div class="time-num" id="days">00</div><div class="time-label" data-i18n="daysLabel">Days</div></div><div class="time-box"><div class="time-num" id="hours">00</div><div class="time-label" data-i18n="hoursLabel">Hours</div></div><div class="time-box"><div class="time-num" id="mins">00</div><div class="time-label" data-i18n="minutesLabel">Mins</div></div><div class="time-box"><div class="time-num" id="secs">00</div><div class="time-label" data-i18n="secondsLabel">Secs</div></div></div></section>
+      <footer class="footer-signoff"><p data-i18n="blessings">आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,</p><h3 data-i18n="family">गादेवार परिवार</h3></footer>
     </main>
   </div>
-
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    const translations = {
-      mr: {
-        tap:'Tap the seal to open • सीलवर टॅप करा',ganesh:'।। श्री गणेशाय नमः ।।',wedding:'॥ शुभविवाह ॥',warmInvitation:'सस्नेह निमंत्रण',date:'सोमवार, दि. ०४ जानेवारी २०२७',time:'सकाळी १०.४२ मिनिटांनी',venueShort:'वासवी सेलिब्रेशन हॉल, अहेरी',invitationTag:'THE INVITATION',coupleIntro:'वर आणि वधू परिचय',invitationMessage:'आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.',groomRole:'...वर...',groomParents:'सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार',sonOf:'यांचे चिरंजीव',groomAddress:'रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली',brideRole:'...वधु...',brideParents:'सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार',daughterOf:'यांची कन्या',brideAddress:'रा. नांदगांव, ता. मूल, जि. चंद्रपूर',celebrationTag:'CELEBRATION DETAILS',eventDetails:'विवाह सोहळा तपशील',muhurta:'विवाह मुहूर्त',lunarDate:'मिती शके १९४८, मार्गशीर्ष कृष्ण पक्ष द्वादशी',nakshatra:'अनुराधा नक्षत्र',eventDate:'रोज सोमवार दि. ०४/०१/२०२७ ला',eventTime:'सकाळी १०.४२ मिनिटांनी',venueTitle:'विवाह स्थळ',venueName:'वासवी सेलिब्रेशन हॉल',venueAddress:'आलापल्ली रोड, अहेरी',meal:'स्वरूची भोज',mealTime:'विवाह सोहळ्या नंतर लगेच',directions:'📍 Google Maps वर मार्ग पहा',countdownTag:'COUNTING DOWN TO THE MUHURTHAM',countdownTitle:'शुभ मुहूर्ताची घटिका',days:'दिवस',hours:'तास',minutes:'मिनिटे',seconds:'सेकंद',blessings:'आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,',family:'गादेवार परिवार',musicTitle:'संगीत चालू/बंद करा',musicOn:'संगीत बंद करा',musicOff:'संगीत चालू करा',openLabel:'लग्नाचे आमंत्रण उघडा'
-      },
-      en: {
-        tap:'Tap the seal to open the invitation',ganesh:'।। Salutations to Lord Ganesha ।।',wedding:'॥ Wedding Invitation ॥',warmInvitation:'You are cordially invited',date:'Monday, 4 January 2027',time:'At 10:42 AM',venueShort:'Vasavi Celebration Hall, Aheri',invitationTag:'THE INVITATION',coupleIntro:'Meet the Groom and Bride',invitationMessage:'We humbly invite you to join us on this auspicious occasion and bless the couple with your good wishes.',groomRole:'GROOM',groomParents:'Mrs. Jagruti and Mr. Gajananrao Girijashankar Gadevar',sonOf:'Beloved son of',groomAddress:'Alapalli, Aheri Taluka, Gadchiroli District',brideRole:'BRIDE',brideParents:'Mrs. Asha and Mr. Prakashrao Ramchandra Gundawar',daughterOf:'Beloved daughter of',brideAddress:'Nandgaon, Mul Taluka, Chandrapur District',celebrationTag:'CELEBRATION DETAILS',eventDetails:'Wedding Ceremony Details',muhurta:'Wedding Muhurta',lunarDate:'Shaka Year 1948, Margashirsha Krishna Paksha Dwadashi',nakshatra:'Anuradha Nakshatra',eventDate:'Monday, 4 January 2027',eventTime:'At 10:42 AM',venueTitle:'Wedding Venue',venueName:'Vasavi Celebration Hall',venueAddress:'Alapalli Road, Aheri',meal:'Wedding Feast',mealTime:'Immediately after the wedding ceremony',directions:'📍 Get directions on Google Maps',countdownTag:'COUNTING DOWN TO THE MUHURTHAM',countdownTitle:'Time until the auspicious moment',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'Seconds',blessings:'With best wishes and blessings,',family:'The Gadevar Family',musicTitle:'Toggle music',musicOn:'Turn music off',musicOff:'Turn music on',openLabel:'Open the wedding invitation'
-      }
+    const translations={
+      mr:{tap:'Tap the seal to open • सीलवर टॅप करा',ganesh:'।। श्री गणेशाय नमः ।।',wedding:'॥ शुभविवाह ॥',warmInvitation:'सस्नेह निमंत्रण',groomName:'कौस्तुभ',brideName:'प्रियंका',groomNameCard:'चि. कौस्तुभ',brideNameCard:'चि. सौ. कां. प्रियंका',date:'सोमवार, दि. ०४ जानेवारी २०२७',time:'सकाळी १०.४२ मिनिटांनी',venueShort:'वासवी सेलिब्रेशन हॉल, अहेरी',invitationTag:'THE INVITATION',coupleIntro:'वर आणि वधू परिचय',invitationMessage:'आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.',groomRole:'...वर...',groomParents:'सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार',sonOf:'यांचे चिरंजीव',groomAddress:'रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली',brideRole:'...वधु...',brideParents:'सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार',daughterOf:'यांची कन्या',brideAddress:'रा. नांदगांव, ता. मूल, जि. चंद्रपूर',celebrationTag:'CELEBRATION DETAILS',eventDetails:'विवाह सोहळा तपशील',muhurta:'विवाह मुहूर्त',lunarDate:'मिती शके १९४८, मार्गशीर्ष कृष्ण पक्ष द्वादशी',nakshatra:'अनुराधा नक्षत्र',eventDate:'रोज सोमवार दि. ०४/०१/२०२७ ला',eventTime:'सकाळी १०.४२ मिनिटांनी',venueTitle:'विवाह स्थळ',venueName:'वासवी सेलिब्रेशन हॉल',venueAddress:'आलापल्ली रोड, अहेरी',meal:'स्वरूची भोज',mealTime:'विवाह सोहळ्या नंतर लगेच',directions:'📍 Google Maps वर मार्ग पहा',countdownTag:'COUNTING DOWN TO THE MUHURTHAM',countdownTitle:'शुभ मुहूर्ताची घटिका',daysLabel:'दिवस',hoursLabel:'तास',minutesLabel:'मिनिटे',secondsLabel:'सेकंद',blessings:'आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,',family:'गादेवार परिवार',musicTitle:'संगीत चालू/बंद करा',musicOn:'संगीत बंद करा',musicOff:'संगीत चालू करा',openLabel:'लग्नाचे आमंत्रण उघडा'},
+      en:{tap:'Tap the seal to open the invitation',ganesh:'।। Salutations to Lord Ganesha ।।',wedding:'॥ Wedding Invitation ॥',warmInvitation:'You are cordially invited',groomName:'Kaustubh',brideName:'Priyanka',groomNameCard:'Kaustubh',brideNameCard:'Priyanka',date:'Monday, 4 January 2027',time:'At 10:42 AM',venueShort:'Vasavi Celebration Hall, Aheri',invitationTag:'THE INVITATION',coupleIntro:'Meet the Groom and Bride',invitationMessage:'We humbly invite you to join us on this auspicious occasion and bless the couple with your good wishes.',groomRole:'GROOM',groomParents:'Mrs. Jagruti and Mr. Gajananrao Girijashankar Gadevar',sonOf:'Beloved son of',groomAddress:'Alapalli, Aheri Taluka, Gadchiroli District',brideRole:'BRIDE',brideParents:'Mrs. Asha and Mr. Prakashrao Ramchandra Gundawar',daughterOf:'Beloved daughter of',brideAddress:'Nandgaon, Mul Taluka, Chandrapur District',celebrationTag:'CELEBRATION DETAILS',eventDetails:'Wedding Ceremony Details',muhurta:'Wedding Muhurta',lunarDate:'Shaka Year 1948, Margashirsha Krishna Paksha Dwadashi',nakshatra:'Anuradha Nakshatra',eventDate:'Monday, 4 January 2027',eventTime:'At 10:42 AM',venueTitle:'Wedding Venue',venueName:'Vasavi Celebration Hall',venueAddress:'Alapalli Road, Aheri',meal:'Wedding Feast',mealTime:'Immediately after the wedding ceremony',directions:'📍 Get directions on Google Maps',countdownTag:'COUNTING DOWN TO THE MUHURTHAM',countdownTitle:'Time until the auspicious moment',daysLabel:'Days',hoursLabel:'Hours',minutesLabel:'Minutes',secondsLabel:'Seconds',blessings:'With best wishes and blessings,',family:'The Gadevar Family',musicTitle:'Toggle music',musicOn:'Turn music off',musicOff:'Turn music on',openLabel:'Open the wedding invitation'}
     };
-
-    let currentLanguage = localStorage.getItem('weddingInviteLanguage') === 'en' ? 'en' : 'mr';
-    let ytPlayer;
-    let isPlaying = false;
-
-    function setLanguage(language) {
-      currentLanguage = language;
-      document.documentElement.lang = language;
-      document.title = language === 'en' ? 'Kaustubh and Priyanka - Wedding Invitation' : 'कौस्तुभ आणि प्रियंका - शुभविवाह निमंत्रण';
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const value = translations[language][element.dataset.i18n];
-        if (value !== undefined) element.textContent = value;
-      });
-      const button = document.getElementById('languageToggle');
-      button.textContent = language === 'mr' ? 'English' : 'मराठी';
-      button.setAttribute('aria-label', language === 'mr' ? 'Switch to English' : 'मराठी भाषेत पहा');
-      const audioButton = document.getElementById('audioBtn');
-      audioButton.title = translations[language].musicTitle;
-      audioButton.setAttribute('aria-label', translations[language].musicTitle);
-      document.getElementById('envelopeBox').setAttribute('aria-label', translations[language].openLabel);
-      localStorage.setItem('weddingInviteLanguage', language);
-    }
-
-    function toggleLanguage() { setLanguage(currentLanguage === 'mr' ? 'en' : 'mr'); }
-
-    function onYouTubeIframeAPIReady() {
-      ytPlayer = new YT.Player('ytplayer', {
-        height:'1',width:'1',videoId:'isOZo5ONtdg',
-        playerVars:{autoplay:0,controls:0,loop:1,playlist:'isOZo5ONtdg',playsinline:1},
-        events:{onReady:function(event){event.target.mute();}}
-      });
-    }
-
-    function openInvitation() {
-      const box = document.getElementById('envelopeBox');
-      if (box.classList.contains('glowing')) return;
-      box.classList.add('glowing');
-      if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
-        ytPlayer.unMute();ytPlayer.setVolume(100);ytPlayer.playVideo();isPlaying = true;
-      }
-      setTimeout(() => box.classList.add('open'), 650);
-      setTimeout(() => {
-        const overlay = document.getElementById('envelope-overlay');
-        overlay.style.opacity = '0';overlay.style.visibility = 'hidden';
-        document.getElementById('main-invitation').classList.add('visible');
-        window.scrollTo(0, 0);
-      }, 1850);
-    }
-
-    function toggleAudio() {
-      const button = document.getElementById('audioBtn');
-      if (!ytPlayer || typeof ytPlayer.getPlayerState !== 'function') return;
-      if (isPlaying) {
-        ytPlayer.pauseVideo();button.textContent = '🔇';isPlaying = false;
-        button.setAttribute('aria-label', translations[currentLanguage].musicOff);
-      } else {
-        ytPlayer.unMute();ytPlayer.setVolume(100);ytPlayer.playVideo();button.textContent = '🎵';isPlaying = true;
-        button.setAttribute('aria-label', translations[currentLanguage].musicOn);
-      }
-    }
-
-    const targetDate = new Date('2027-01-04T10:42:00+05:30').getTime();
-    function updateCountdown() {
-      const diff = targetDate - Date.now();
-      if (diff <= 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('mins').textContent = '00';
-        document.getElementById('secs').textContent = '00';
-        return;
-      }
-      document.getElementById('days').textContent = Math.floor(diff / 86400000);
-      document.getElementById('hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
-      document.getElementById('mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
-      document.getElementById('secs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
-    }
-
-    document.getElementById('envelopeBox').addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault();openInvitation(); }
-    });
-    setLanguage(currentLanguage);
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    let currentLanguage=localStorage.getItem('weddingInviteLanguage')==='en'?'en':'mr';let ytPlayer;let isPlaying=false;
+    function setLanguage(language){currentLanguage=language;document.documentElement.lang=language;document.title=language==='en'?'Kaustubh and Priyanka - Wedding Invitation':'कौस्तुभ आणि प्रियंका - शुभविवाह निमंत्रण';document.querySelectorAll('[data-i18n]').forEach(element=>{const value=translations[language][element.dataset.i18n];if(value!==undefined)element.textContent=value});const button=document.getElementById('languageToggle');button.textContent=language==='mr'?'English':'मराठी';button.setAttribute('aria-label',language==='mr'?'Switch to English':'मराठी भाषेत पहा');const audioButton=document.getElementById('audioBtn');audioButton.title=translations[language].musicTitle;audioButton.setAttribute('aria-label',translations[language].musicTitle);document.getElementById('envelopeBox').setAttribute('aria-label',translations[language].openLabel);localStorage.setItem('weddingInviteLanguage',language)}
+    function toggleLanguage(){setLanguage(currentLanguage==='mr'?'en':'mr')}
+    function onYouTubeIframeAPIReady(){ytPlayer=new YT.Player('ytplayer',{height:'1',width:'1',videoId:'isOZo5ONtdg',playerVars:{autoplay:0,controls:0,loop:1,playlist:'isOZo5ONtdg',playsinline:1},events:{onReady:event=>event.target.mute()}})}
+    function openInvitation(){const box=document.getElementById('envelopeBox');if(box.classList.contains('glowing'))return;box.classList.add('glowing');if(ytPlayer&&typeof ytPlayer.playVideo==='function'){ytPlayer.unMute();ytPlayer.setVolume(100);ytPlayer.playVideo();isPlaying=true}setTimeout(()=>box.classList.add('open'),650);setTimeout(()=>{const overlay=document.getElementById('envelope-overlay');overlay.style.opacity='0';overlay.style.visibility='hidden';document.getElementById('main-invitation').classList.add('visible');window.scrollTo(0,0)},1850)}
+    function toggleAudio(){const button=document.getElementById('audioBtn');if(!ytPlayer||typeof ytPlayer.getPlayerState!=='function')return;if(isPlaying){ytPlayer.pauseVideo();button.textContent='🔇';isPlaying=false;button.setAttribute('aria-label',translations[currentLanguage].musicOff)}else{ytPlayer.unMute();ytPlayer.setVolume(100);ytPlayer.playVideo();button.textContent='🎵';isPlaying=true;button.setAttribute('aria-label',translations[currentLanguage].musicOn)}}
+    const targetDate=new Date('2027-01-04T10:42:00+05:30').getTime();function updateCountdown(){const diff=targetDate-Date.now();if(diff<=0){['days','hours','mins','secs'].forEach(id=>document.getElementById(id).textContent='00');return}document.getElementById('days').textContent=Math.floor(diff/86400000);document.getElementById('hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0')}
+    document.getElementById('envelopeBox').addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openInvitation()}});setLanguage(currentLanguage);updateCountdown();setInterval(updateCountdown,1000);
   </script>
 </body>
 </html>
