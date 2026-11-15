@@ -2,9 +2,10 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>प्रियंका आणि कौस्तुभ - शुभविवाह निमंत्रण</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Rozha+One&family=Tiro+Devanagari+Marathi:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Marathi:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-cream: #fdf8f2;
@@ -25,7 +26,7 @@
 
     body {
       background-color: #1c1512;
-      font-family: 'Tiro Devanagari Marathi', serif;
+      font-family: 'Noto Serif Devanagari', 'Tiro Devanagari Marathi', serif;
       color: var(--text-dark);
       display: flex;
       justify-content: center;
@@ -75,7 +76,6 @@
       border: 1px solid #e5d5c3;
     }
 
-    /* Embossed floral background pattern */
     .envelope-box::before {
       content: "";
       position: absolute;
@@ -184,9 +184,9 @@
 
     .tap-instruction {
       margin-top: 32px;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
       font-size: 0.78rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: #6e5544;
       animation: pulse 2s infinite;
@@ -228,7 +228,6 @@
     #main-invitation {
       opacity: 0;
       transition: opacity 1.2s ease;
-      padding-bottom: 50px;
     }
 
     #main-invitation.visible {
@@ -241,18 +240,30 @@
       top: 16px;
       right: 16px;
       z-index: 900;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(5px);
-      border: 1px solid var(--gold);
-      width: 40px;
-      height: 40px;
+      border: 1.5px solid var(--gold);
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-size: 1.15rem;
+    }
+
+    /* Hidden YouTube Audio Container */
+    #yt-audio-Wrapper {
+      position: fixed;
+      width: 1px;
+      height: 1px;
+      bottom: -10px;
+      left: -10px;
+      opacity: 0.01;
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Hero Section with Floral Arch */
@@ -318,13 +329,13 @@
     .ganesh-header {
       font-size: 0.95rem;
       color: var(--maroon);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       margin-bottom: 6px;
       font-weight: 600;
     }
 
     .shubh-vivah-badge {
-      font-family: 'Rozha One', serif;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
       font-size: 1.9rem;
       color: var(--maroon);
       margin-bottom: 14px;
@@ -333,7 +344,7 @@
     }
 
     .couple-title {
-      font-family: 'Rozha One', serif;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
       font-size: 2.65rem;
       color: var(--text-dark);
       line-height: 1.15;
@@ -372,18 +383,18 @@
     }
 
     .section-heading {
-      font-family: 'Rozha One', serif;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
       font-size: 1.75rem;
       color: var(--text-dark);
       margin-bottom: 18px;
     }
 
-    /* Bride & Groom Parent Boxes (Exact PDF Wording) */
+    /* Bride & Groom Parent Boxes */
     .parent-box {
       background: #fff;
       border: 1px solid #e7d8c5;
       border-radius: 12px;
-      padding: 20px 16px;
+      padding: 22px 16px;
       margin: 16px 0;
       box-shadow: 0 6px 18px rgba(0,0,0,0.03);
       position: relative;
@@ -393,24 +404,33 @@
       display: inline-block;
       background: var(--maroon);
       color: #fff;
-      font-size: 0.8rem;
-      padding: 3px 14px;
+      font-size: 0.85rem;
+      padding: 4px 16px;
       border-radius: 20px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
     }
 
     .person-name {
-      font-family: 'Rozha One', serif;
-      font-size: 1.55rem;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 1.65rem;
       color: var(--maroon);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .parent-details {
-      font-size: 0.98rem;
-      line-height: 1.65;
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.02rem;
+      line-height: 1.75;
       color: #4a3429;
+    }
+
+    .village-line {
+      display: block;
+      margin-top: 6px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #3a2218;
     }
 
     .hashtag-pill {
@@ -447,16 +467,16 @@
     }
 
     .event-title {
-      font-family: 'Rozha One', serif;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
       font-size: 1.65rem;
       color: var(--maroon);
       margin-bottom: 12px;
     }
 
     .tithi-text {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #5e4437;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 12px;
     }
 
@@ -478,7 +498,7 @@
       border-radius: 25px;
       color: var(--maroon);
       text-decoration: none;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
       font-size: 0.82rem;
       font-weight: 500;
       transition: all 0.3s;
@@ -489,7 +509,7 @@
       color: #fff;
     }
 
-    /* Countdown Section (Matching Video Maroon Banner) */
+    /* Countdown Section */
     .countdown-banner {
       background: linear-gradient(135deg, #7c1d26 0%, #520f16 100%);
       color: #fff;
@@ -526,64 +546,20 @@
       opacity: 0.85;
     }
 
-    /* RSVP Section */
-    .rsvp-form {
-      background: #fff;
-      border: 1px solid #e5d6c5;
-      border-radius: 14px;
-      padding: 24px 18px;
-      text-align: left;
-      margin-top: 16px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      margin-bottom: 6px;
-      color: #5c4338;
-      font-weight: 600;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid #d4c3b0;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      margin-bottom: 16px;
-      font-family: inherit;
-    }
-
-    .whatsapp-btn {
-      width: 100%;
-      background: #4e6b48;
-      color: #fff;
-      border: none;
-      padding: 13px;
-      border-radius: 25px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
+    /* Footer */
     .footer-signoff {
       background: #2b1810;
       color: #f3e5d5;
       text-align: center;
-      padding: 36px 20px;
+      padding: 40px 20px;
     }
 
     .footer-signoff h3 {
-      font-family: 'Rozha One', serif;
-      font-size: 1.8rem;
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 1.85rem;
       color: var(--gold-light);
-      margin: 10px 0 6px;
+      margin: 10px 0 0;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -612,17 +588,17 @@
 
         <!-- Wax Seal with Initials -->
         <div class="wax-seal">
-          <span>P & K</span>
+          <span>P &amp; K</span>
         </div>
       </div>
       <p class="tap-instruction">Tap the seal to open • सीलवर टॅप करा</p>
     </div>
 
-    <!-- Background Flute Music (Optional MP3 URL) -->
-    <audio id="bgMusic" loop>
-      <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
-    </audio>
-    <div class="audio-btn" onclick="toggleAudio()" title="संगीत चालू/बंद करा">🎵</div>
+    <!-- Hidden YouTube Player for Muzhumathi (Instrumental) - isOZo5ONtdg -->
+    <div id="yt-audio-Wrapper">
+      <div id="ytplayer"></div>
+    </div>
+    <div class="audio-btn" id="audioBtn" onclick="toggleAudio()" title="संगीत चालू/बंद करा">🎵</div>
 
     <!-- ==================== 2. MAIN SCROLLING INVITATION ==================== -->
     <div id="main-invitation">
@@ -655,25 +631,25 @@
           आमच्या घरातील या मंगलप्रसंगी आपली उपस्थिती आणि शुभ आशीर्वाद लाभावेत, हीच नम्र विनंती.
         </p>
 
-        <!-- GROOM CARD (From PDF) -->
+        <!-- GROOM CARD -->
         <div class="parent-box">
           <span class="role-badge">...वर...</span>
           <div class="person-name">चि. कौस्तुभ</div>
           <div class="parent-details">
             सौ. जागृती व श्री. गजाननराव गिरीजाशंकर गादेवार<br>
-            यांचे चिरंजीव<br>
-            <strong>रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली</strong>
+            यांचे चिरंजीव
+            <span class="village-line">रा. आलापल्ली, ता. अहेरी, जि. गडचिरोली</span>
           </div>
         </div>
 
-        <!-- BRIDE CARD (From PDF) -->
+        <!-- BRIDE CARD (Cleanly encoded रा. नांदगांव, ता. मूल, जि. चंद्रपूर) -->
         <div class="parent-box">
           <span class="role-badge">...वधु...</span>
           <div class="person-name">चि. सौ. कां. प्रियंका</div>
           <div class="parent-details">
             सौ. आशा व श्री. प्रकाशराव रामचंद्र गुंडावार<br>
-            यांची कन्या<br>
-            <strong>रा. नांद���ांव, ता. मूल, जि. चंद्रपूर</strong>
+            यांची कन्या
+            <span class="village-line">&#x0930;&#x093E;. &#x0928;&#x093E;&#x0902;&#x0926;&#x0917;&#x093E;&#x0902;&#x0935;, &#x0924;&#x093E;. &#x092E;&#x0942;&#x0932;, &#x091C;&#x093F;. &#x091A;&#x0902;&#x0926;&#x094D;&#x0930;&#x092A;&#x0942;&#x0930;</span>
           </div>
         </div>
 
@@ -741,52 +717,52 @@
         </div>
       </section>
 
-      <!-- WHATSAPP RSVP SECTION -->
-      <section class="section-card">
-        <div class="section-tag">RSVP</div>
-        <h2 class="section-heading">आपली उपस्थिती कळवा</h2>
-        <p style="font-size: 0.9rem; color: #5c4338;">
-          खालील माहिती भरून थेट कुटुंबाला WhatsApp द्वारे संदेश पाठवा.
-        </p>
-
-        <div class="rsvp-form">
-          <label class="form-label">आपले नाव (Your Name)</label>
-          <input type="text" id="guestName" class="form-input" placeholder="उदा. राहुल देशमुख">
-
-          <label class="form-label">एकूण किती व्यक्ती येणार? (Number of Guests)</label>
-          <input type="number" id="guestCount" class="form-input" value="2" min="1" max="20">
-
-          <button class="whatsapp-btn" onclick="sendWhatsAppRSVP()">
-            💬 SEND RSVP ON WHATSAPP
-          </button>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
+      <!-- FOOTER (Cleaned up as requested) -->
       <footer class="footer-signoff">
-        <p style="font-size: 0.9rem; opacity: 0.85;">आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,</p>
+        <p style="font-size: 0.95rem; opacity: 0.9;">आपल्या शुभ आशीर्वादांच्या प्रतीक्षेत,</p>
         <h3>गुंडावार आणि गादेवार परिवार</h3>
-        <p style="font-size: 0.85rem; color: var(--gold-light); margin-top: 4px;">
-          स्वागतोत्सुक: समीर प्रकाश गुंडावार
-        </p>
       </footer>
 
     </div>
   </div>
 
+  <!-- YouTube IFrame API Script for Muzhumathi (Instrumental) -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
+    let ytPlayer;
+    let isPlaying = false;
+
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('ytplayer', {
+        height: '1',
+        width: '1',
+        videoId: 'isOZo5ONtdg',
+        playerVars: {
+          'autoplay': 0,
+          'controls': 0,
+          'loop': 1,
+          'playlist': 'isOZo5ONtdg',
+          'playsinline': 1
+        }
+      });
+    }
+
     // 1. Envelope Opening Sequence
     function openInvitation() {
       const box = document.getElementById('envelopeBox');
       const overlay = document.getElementById('envelope-overlay');
       const main = document.getElementById('main-invitation');
-      const audio = document.getElementById('bgMusic');
 
       // Step 1: Glow seal & golden vines
       box.classList.add('glowing');
 
-      // Play flute audio on user interaction
-      audio.play().catch(() => {});
+      // Start playing Muzhumathi (Instrumental) on user tap
+      if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytPlayer.playVideo();
+        isPlaying = true;
+      }
 
       // Step 2: Open flap & release inner light
       setTimeout(() => {
@@ -802,13 +778,19 @@
       }, 1850);
     }
 
-    // 2. Audio Toggle
+    // 2. Audio Toggle Button
     function toggleAudio() {
-      const audio = document.getElementById('bgMusic');
-      if (audio.paused) {
-        audio.play();
+      const btn = document.getElementById('audioBtn');
+      if (!ytPlayer || typeof ytPlayer.getPlayerState !== 'function') return;
+
+      if (isPlaying) {
+        ytPlayer.pauseVideo();
+        btn.innerText = '🔇';
+        isPlaying = false;
       } else {
-        audio.pause();
+        ytPlayer.playVideo();
+        btn.innerText = '🎵';
+        isPlaying = true;
       }
     }
 
@@ -833,16 +815,6 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
-
-    // 4. WhatsApp RSVP Sender
-    function sendWhatsAppRSVP() {
-      const name = document.getElementById('guestName').value.trim() || 'निमंत्रित पाहुणे';
-      const count = document.getElementById('guestCount').value || '1';
-      // Replace with your 10-digit WhatsApp number (with 91 prefix)
-      const phone = "919000000000"; 
-      const message = `नमस्कार! मी *${name}*, प्रियंका आणि कौस्तुभ यांच्या शुभविवाह सोहळ्यासाठी (०४ जानेवारी २०२७) एकूण *${count}* व्यक्तींसह आनंदाने उपस्थित राहणार आहे. धन्यवाद!`;
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
-    }
   </script>
 </body>
 </html>
